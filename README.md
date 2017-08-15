@@ -22,15 +22,15 @@ npm run dev
 
 ## Keyword
 
-> v-model 雙向綁定 (day-03)
+#### v-model 雙向綁定 (day-03)
 ```
 <h2>{{ hello }}</h2>
 <h2>{{ hello + ' and Ironman 2017' }}</h2>
 <input type="text" v-model="hello">
 ```
-> vue-router (day-04)
+#### vue-router (day-04)
 
-index.js
+> index.js
 ```
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -63,7 +63,7 @@ export default new VueRouter({
 })
 ```
 
-App.vue
+> App.vue
 ```
 <template>
     <div id="app">
@@ -80,4 +80,36 @@ App.vue
     }
 </script>
 ```
+
+#### computed 計算 (day-05)
+練習使用computed，並計算攝氏轉華氏。
+```
+<template>
+    <div class="container">
+        <h1>{{ title }}</h1>
+        <h2>華氏：{{ celsius * 9 / 5 + 32 }} °F</h2>
+        <h2>華氏：{{ fahrenheit }} °F</h2>
+        <div class="celsius">
+            攝氏：<input type="number" v-model="celsius"/> °C
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        data () {
+            return {
+                title: '攝氏轉華氏',
+                celsius: 0
+            }
+        },
+        computed: {
+            fahrenheit () {
+                return this.celsius * 9 / 5 + 32;
+            }
+        }
+    }
+</script>
+```
+
 
