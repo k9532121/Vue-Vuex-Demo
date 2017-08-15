@@ -22,13 +22,13 @@ npm run dev
 
 ## Keyword
 
-#### v-model 雙向綁定 (day-03)
+### v-model 雙向綁定 (day-03)
 ```
 <h2>{{ hello }}</h2>
 <h2>{{ hello + ' and Ironman 2017' }}</h2>
 <input type="text" v-model="hello">
 ```
-#### vue-router (day-04)
+### vue-router (day-04)
 
 > index.js
 ```
@@ -81,7 +81,7 @@ export default new VueRouter({
 </script>
 ```
 
-#### computed 計算 (day-05)
+### computed 計算 (day-05)
 練習使用computed，並計算攝氏轉華氏。
 ```
 <template>
@@ -104,7 +104,7 @@ export default new VueRouter({
             }
         },
         computed: {
-            fahrenheit () {
+            fahrenheit: function () {
                 return this.celsius * 9 / 5 + 32;
             }
         }
@@ -112,4 +112,33 @@ export default new VueRouter({
 </script>
 ```
 
+### v-if, v-show, v-on, method 練習 (day-06)
+#### v-if 若條件成立繪出在瀏覽器上
+```
+<h2 v-if="isCelsius">攝氏：{{ celsius }} °C</h2>
+<h2 v-if="!isCelsius">華氏：{{ fahrenheit }} °F</h2>
+```
+#### v-show 若條件成立則顯示在瀏覽器上
+```
+<span v-show="!isCelsius">攝氏：</span>
+<span v-show="isCelsius">華氏：</span>
+```
+#### v-on 事件
+```
+v-on:click="method"
+@click="method"
 
+<button @click="temperatureConversio(userInput)">轉換</button>
+```
+#### method 方法
+```
+methods: {
+    temperatureConversio (val) {
+        if (this.isCelsius) {
+            alert('攝氏：' + this.celsius);
+        } else {
+            alert('華氏：' + this.fahrenheit);
+        }
+    }
+}
+```
