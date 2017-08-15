@@ -23,3 +23,61 @@ npm run dev
 ## Keyword
 
 > v-model 雙向綁定 (day-03)
+```
+<h2>{{ hello }}</h2>
+<h2>{{ hello + ' and Ironman 2017' }}</h2>
+<input type="text" v-model="hello">
+```
+> vue-router (day-04)
+
+index.js
+```
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
+// page
+import Hello from '@/components/Hello';
+import CtoF from '@/components/C2F.vue';
+
+export default new VueRouter({
+    // router 表
+    routes: [
+        {
+            path: '/hello',
+            name: 'Hello',
+            component: Hello
+        },
+        {
+            path: '/c2f',
+            name: 'c2f',
+            component: CtoF
+        },
+        // router 轉址
+        {
+            path: '/*',
+            redirect: '/hello'
+        }
+    ]
+})
+```
+
+App.vue
+```
+<template>
+    <div id="app">
+        <!--<img src="./assets/logo.png">-->
+        <router-link :to="{path: '/hello'}">Hello</router-link>
+        <router-link :to="{name: 'c2f'}">CtoF</router-link>
+        <router-view></router-view>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'app'
+    }
+</script>
+```
+
