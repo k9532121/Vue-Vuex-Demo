@@ -20,3 +20,6 @@ npm install
 npm run dev
 ```
 
+## Keyword
+
+> v-model 雙向綁定 (day-03)
