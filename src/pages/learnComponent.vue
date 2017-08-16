@@ -2,7 +2,7 @@
     <div id="jumbotron">
         <Navbar></Navbar>
         <Jumbotron></Jumbotron>
-        <Container></Container>
+        <Container :list="list"></Container>
     </div>
 </template>
 <script>
@@ -15,8 +15,30 @@
             Navbar,
             Jumbotron,
             Container
+        },
+        data () {
+            return {
+                list: [
+                    {
+                        title: '標題1',
+                        info: 'Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ',
+                        btntext: 'View details »'
+                    },
+                    {
+                        title: '標題2',
+                        info: 'Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ',
+                        btntext: 'View details »'
+                    },
+                    {
+                        title: '標題3',
+                        info: 'Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+                        btntext: 'View details »'
+                    },
+                ]
+            }
         }
     }
+
 </script>
 <style>
     #jumbotron{

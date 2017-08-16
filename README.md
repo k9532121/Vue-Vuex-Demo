@@ -142,3 +142,48 @@ methods: {
     }
 }
 ```
+### v-for (day-08)
+```
+<div v-for="item in list" class="col-md-4">
+    <h2>{{ item.title }}</h2>
+    <p>{{ item.info }}</p>
+    <p><a class="btn btn-default" href="#" role="button">{{ item.btntext }}</a></p>
+</div>
+
+<script>
+export default {
+  data () {
+    return {
+      list: [ 資料放這裡(container.vue) ],
+    }
+  },
+}
+</script>
+```
+
+### component 往下傳遞資料 (day-08)
+```
+父層傳遞
+<script>
+export default {
+  data () {
+    return {
+      list: [ 資料存在這裡(learnComponent.vue)傳給 container ],
+    }
+  },
+}
+</script>
+
+子層接收
+<script>
+export default {
+  props: {
+    // attribute name: Type
+    list: Array
+  }
+}
+</script>
+```
+
+
+
